@@ -33,7 +33,7 @@ body {
 .dog-list-input {
   color: lightgray;
   box-shadow: 0 0 6px #520469;
-  width: 70%;
+  width: 90%;
   padding: 8px 0;
   margin-bottom: 2px;
   background-color: rgba(12, 12, 12, 0.801);
@@ -60,7 +60,7 @@ body {
 
 .dog-list {
   max-height: 200px;
-  width: 70%;
+  width: 90%;
   overflow-y: scroll;
   border: 2px solid black;
 }
@@ -97,14 +97,14 @@ body {
 }
 
 .dog-searcher {
-  width: 75%;
+  width: 80%;
   margin-bottom: 2px;
 }
 
 .dog-searcher input {
   color: lightgray;
   box-shadow: 0 0 6px #520469;
-  width: 70%;
+  width: 80%;
   padding: 8px 0;
   background-color: rgba(12, 12, 12, 0.801);
   text-align: center;
@@ -139,6 +139,7 @@ body {
 }
 
 .dog-photo-container img {
+  margin:1rem;
   width: 500px;
 }
 
@@ -147,4 +148,9 @@ body {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0%);
+}
+
+.nav-img {
+  height: 100px;
+  max-width: 100px;
 }

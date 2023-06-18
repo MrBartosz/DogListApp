@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import AnonymousDog from './resources/AnonymousDog.png'
+import { useState } from 'react';
 import { fetchRandomDogImage } from './DogApi';
 import { keyboardKey } from '@testing-library/user-event';
 

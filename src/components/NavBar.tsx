@@ -15,7 +15,6 @@ function Navbar() {
         <img
           src={Monitor1}
           alt="NavMonitor"
-          width={100}
           style={{ opacity: isDogListActive ? 0.5 : 1, marginRight:18 }}
         />
       </NavLink>
@@ -23,7 +22,6 @@ function Navbar() {
         <img
           src={Monitor2}
           alt="NavMonitor"
-          width={100}
           style={{ opacity: isDogPhotoActive ? 0.5 : 1 }}
         />
       </NavLink>
