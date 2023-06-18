@@ -37,6 +37,7 @@ body {
   margin-bottom: 2px;
   background-color: rgba(12, 12, 12, 0.801);
   text-align: center;
+  border-radius: 5px;
 }
 
 .dog-list-input:focus {
@@ -85,4 +86,57 @@ body {
   outline: none;
   background-color: rgb(97, 95, 95);
   color: rgb(190, 190, 190);
+}
+
+.dog-photo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-searcher {
+  width: 75%;
+  margin-bottom: 2px;
+}
+
+.dog-searcher input {
+  color: lightgray;
+  box-shadow: 0 0 6px #520469;
+  width: 70%;
+  padding: 8px 0;
+  background-color: rgba(12, 12, 12, 0.801);
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.dog-searcher button {
+  background-color: rgba(126, 124, 124, 0.342);
+  color: rgb(245, 245, 245);
+  border: none;
+  padding: 8px 8px;
+  box-shadow: 0 0 5px #8a8a8a;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dog-searcher button:hover {
+  background-color: rgba(66, 65, 65, 0.342);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px #8a8a8a;
+}
+
+.dog-searcher button:active {
+  background-color: rgba(24, 23, 23, 0.342);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #8a8a8a;
+  transform: scale(0.98);
+}
+
+.dog-photo-container img {
+  width: 500px;
 }
