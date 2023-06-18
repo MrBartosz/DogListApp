@@ -27,6 +27,7 @@ body {
 
 .screen {
   padding:2.5rem;
+  height: 70vh;
 }
 
 .dog-list-input {
@@ -139,4 +140,11 @@ body {
 
 .dog-photo-container img {
   width: 500px;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }

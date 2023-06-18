@@ -1,6 +1,7 @@
-import AnonymousDog from './resources/AnonymousDog.png';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import AnonymousDog from './resources/AnonymousDog.png'
 import { fetchRandomDogImage } from './DogApi';
+import { keyboardKey } from '@testing-library/user-event';
 
 function DogPhoto() {
   const [dogImage, setDogImage] = useState<string>('');
@@ -9,6 +10,7 @@ function DogPhoto() {
   const submit = () => {
     const breedInput = document.getElementById('breed-input') as HTMLInputElement;
     const breed = breedInput.value;
+
     fetchRandomDogImage(breed)
       .then(image => {
         setDogImage(image);
@@ -20,12 +22,18 @@ function DogPhoto() {
       });
   };
 
+  const handleKeyDown = (event: keyboardKey) => {
+    if (event.key === "Enter") {
+      submit()
+    }
+  }
+
   return (
     <div className='screen'>
       <div className='dog-photo-container'>
         <div className='dog-searcher'>
-          <input id="breed-input" type="text" placeholder='Wpisz Rasę' />
-          <button onClick={submit}>Szukaj</button>
+          <input id="breed-input" type="text" placeholder='Wpisz Rasę' onKeyDown={handleKeyDown}/>
+          <button onClick={submit} >Szukaj</button>
         </div>
         {alertMessage ? (
           <p>Wpisana rasa jest nieprawidłowa</p>
