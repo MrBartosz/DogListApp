@@ -1,25 +1,21 @@
 import React, { useState, useEffect  } from 'react';
+import { fetchDogBreeds } from './DogApi';
 
 function DogList() {
     const [dogBreeds, setDogBreeds] = useState<string[]>([]);
     const [originalDogBreeds, setOriginalDogBreeds] = useState<string[]>([]);
 
+    useEffect(() => {
+        fetchDogBreeds()
+        .then(breeds => {
+          setDogBreeds(breeds);
+          setOriginalDogBreeds(breeds);
+        });
+    }, []);
+
     const handleClick = (breed: string) => {
         console.log(breed)
       };
-
-    useEffect(() => {
-        fetch('https://dog.ceo/api/breeds/list/all')
-            .then(response => response.json())
-            .then(data => {
-                const breeds = Object.keys(data.message);
-                setDogBreeds(breeds);
-                setOriginalDogBreeds(breeds);
-            })
-            .catch(error => {
-                console.error(`Download error: ${error.message}`);
-            });
-    }, []);
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input = e.target.value.toLowerCase();
@@ -42,7 +38,6 @@ function DogList() {
         </div>
     )
 }
-
 
 
 export default DogList;

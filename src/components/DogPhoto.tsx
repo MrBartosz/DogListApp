@@ -1,24 +1,40 @@
-import React, { useState, useEffect, useContext  } from 'react';
 import AnonymousDog from './resources/AnonymousDog.png';
+import React, { useState } from 'react';
+import { fetchRandomDogImage } from './DogApi';
 
 function DogPhoto() {
-    const submit = () => {
+  const [dogImage, setDogImage] = useState<string>('');
+  const [alertMessage, setAlertMessage] = useState<boolean>(false);
 
-    }
-    
-    return (
-        <div className='screen'>
-            <div className='dog-photo-container'>
-                <div className='dog-searcher'>
-                    <input type="text" placeholder='Wpisz Rasę' onSubmit={submit}/>
-                    <button>Szukaj</button>
-                </div>
-                <img src={AnonymousDog} alt="Choosen Dog"/>
-            </div>
+  const submit = () => {
+    const breedInput = document.getElementById('breed-input') as HTMLInputElement;
+    const breed = breedInput.value;
+    fetchRandomDogImage(breed)
+      .then(image => {
+        setDogImage(image);
+        setAlertMessage(false);
+      })
+      .catch(error => {
+        console.error(`Fetch error: ${error.message}`);
+        setAlertMessage(true);
+      });
+  };
+
+  return (
+    <div className='screen'>
+      <div className='dog-photo-container'>
+        <div className='dog-searcher'>
+          <input id="breed-input" type="text" placeholder='Wpisz Rasę' />
+          <button onClick={submit}>Szukaj</button>
         </div>
-    )
+        {alertMessage ? (
+          <p>Wpisana rasa jest nieprawidłowa</p>
+        ) : (
+          <img src={dogImage || AnonymousDog} alt="Choosen Dog" />
+        )}
+      </div>
+    </div>
+  );
 }
-
-
 
 export default DogPhoto;
