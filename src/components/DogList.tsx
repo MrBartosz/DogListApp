@@ -1,9 +1,11 @@
 import React, { useState, useEffect  } from 'react';
 import { fetchDogBreeds } from './DogApi';
+import { useNavigate  } from 'react-router-dom';
 
 function DogList() {
     const [dogBreeds, setDogBreeds] = useState<string[]>([]);
     const [originalDogBreeds, setOriginalDogBreeds] = useState<string[]>([]);
+    const navigate  = useNavigate ();
 
     useEffect(() => {
         fetchDogBreeds()
@@ -14,8 +16,8 @@ function DogList() {
     }, []);
 
     const handleClick = (breed: string) => {
-        console.log(breed)
-      };
+        navigate('/DogPhoto', { state: { breed } });
+    };
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input = e.target.value.toLowerCase();

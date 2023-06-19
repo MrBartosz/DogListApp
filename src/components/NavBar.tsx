@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Monitor1 from "./resources/Monitor1.png";
 import Monitor2 from "./resources/Monitor2.png";

@@ -141,8 +141,20 @@ body {
 .dog-photo-container img {
   margin:1rem;
   width: 500px;
+  max-height: 500px;
 }
 
+.dog-photo-container {
+  transition: transform 0.8s linear;
+}
+
+.fade-out {
+  transform: scale(0);
+}
+
+.loading {
+  opacity: 0.5;
+}
 .nav {
   position: fixed;
   bottom: 0;
@@ -150,7 +162,12 @@ body {
   transform: translate(-50%, 0%);
 }
 
-.nav-img {
-  height: 100px;
+.nav img {
+  height: 80px;
   max-width: 100px;
+}
+
+.nav img.active,
+.nav img:hover {
+  transform: scale(1.1);
 }
