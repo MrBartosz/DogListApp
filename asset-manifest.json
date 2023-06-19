@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/DogListApp/static/css/main.60595a15.css",
-    "main.js": "/DogListApp/static/js/main.c4cdafcb.js",
+    "main.css": "/DogListApp/static/css/main.d4ba8f81.css",
+    "main.js": "/DogListApp/static/js/main.6c72117b.js",
     "static/media/AnonymousDog.png": "/DogListApp/static/media/AnonymousDog.be257740cf97a8f44f1d.png",
     "index.html": "/DogListApp/index.html",
-    "main.60595a15.css.map": "/DogListApp/static/css/main.60595a15.css.map",
-    "main.c4cdafcb.js.map": "/DogListApp/static/js/main.c4cdafcb.js.map"
+    "main.d4ba8f81.css.map": "/DogListApp/static/css/main.d4ba8f81.css.map",
+    "main.6c72117b.js.map": "/DogListApp/static/js/main.6c72117b.js.map"
   },
   "entrypoints": [
-    "static/css/main.60595a15.css",
-    "static/js/main.c4cdafcb.js"
+    "static/css/main.d4ba8f81.css",
+    "static/js/main.6c72117b.js"
   ]
 }
